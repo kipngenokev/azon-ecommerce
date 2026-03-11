@@ -1,13 +1,26 @@
 package com.azon.users.dtos;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
-public class CreateUserRequest {
+public class UserResponseDto {
+
+    private UUID id;
     private String firstName;
     private String lastName;
     private String phoneNumber;
     private String email;
     private LocalDate dateOfBirth;
+    private LocalDateTime createdAt;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -47,5 +60,13 @@ public class CreateUserRequest {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
