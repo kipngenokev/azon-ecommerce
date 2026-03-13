@@ -49,16 +49,15 @@ public class UserService {
         return getUserResponseDto(user);
     }
 
-    private UserResponseDto getUserResponseDto(User user) {
-        UserResponseDto dto = new UserResponseDto();
-        dto.setId(user.getId());
-        dto.setFirstName(user.getFirstName());
-        dto.setLastName(user.getLastName());
-        dto.setPhoneNumber(user.getPhoneNumber());
-        dto.setEmail(user.getEmail());
-        dto.setDateOfBirth(user.getDateOfBirth());
-        dto.setCreatedAt(user.getCreatedAt());
+    private UserResponseDto getUserResponseDto(User savedUser) {
+        return new UserResponseDto(
+        savedUser.getId(),
+        savedUser.getFirstName(),
+        savedUser.getLastName(),
+        savedUser.getPhoneNumber(),
+        savedUser.getEmail(),
+        savedUser.getDateOfBirth(),
+        savedUser.getCreatedAt());
 
-        return dto;
     }
 }

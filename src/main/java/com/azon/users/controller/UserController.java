@@ -1,9 +1,8 @@
-package com.azon.auth.controller;
+package com.azon.users.controller;
 
 import com.azon.users.dtos.CreateUserRequest;
 import com.azon.users.dtos.UserResponseDto;
 import com.azon.users.service.UserService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,11 +22,11 @@ public class UserController {
     @PostMapping("/createUser")
     public ResponseEntity<UserResponseDto> createUser(@RequestBody CreateUserRequest request) {
 
-        UserResponseDto response = userService.createUser(request);
+        UserResponseDto newUser = userService.createUser(request);
 
         return ResponseEntity
-                .created(URI.create("/api/users/" + response.getId()))
-                .body(response);
+                .created(URI.create("/api/users/" + newUser.getId()))
+                .body(newUser);
     }
 
     @GetMapping("/allUsers")

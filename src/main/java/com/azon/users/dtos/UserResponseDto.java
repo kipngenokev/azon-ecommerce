@@ -14,6 +14,16 @@ public class UserResponseDto {
     private LocalDate dateOfBirth;
     private LocalDateTime createdAt;
 
+    public UserResponseDto(UUID id, String firstName, String lastName, String phoneNumber, String email, LocalDate dateOfBirth, LocalDateTime createdAt) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
+        this.createdAt = createdAt;
+    }
+
     public UUID getId() {
         return id;
     }
